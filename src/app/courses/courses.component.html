@@ -3,15 +3,15 @@
         <h1>Webbutveckling - Ramschema</h1>
         <form>
             <label for="srchInput"><strong>Sök:</strong></label><br>
-            <input type="search" id="srchInput" placeholder="Sök efter kurskod eller kursnamn">
+            <input type="text" id="srchInput" placeholder="Sök efter kurskod eller kursnamn">
         </form>
     </div>
     <table>
         <thead>
             <tr>
-                <td id="courseCode">Kurskod</td>
-                <td id="courseName">Kursnamn</td>
-                <td id="courseProg">Progression</td>
+                <td (click)="sortCourses('code')">Kurskod</td>
+                <td (click)="sortCourses('coursename')">Kursnamn</td>
+                <td (click)="sortCourses('progression')">Progression</td>
             </tr>
         </thead>
         <tbody>

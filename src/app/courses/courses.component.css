@@ -48,10 +48,9 @@ input[type=text] {
     box-sizing: border-box;
   }
 
-#courseCode:hover, #courseName:hover, #courseProg:hover {
+thead tr td{
     cursor:pointer;
 }
-
 
 /* Responsivitet */
 @media screen and (max-width: 680px) {
