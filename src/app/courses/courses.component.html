@@ -1,6 +1,25 @@
-<h2>Kurser</h2>
-<ul>
-    <li *ngFor="let course of courses">
-        {{ course.coursename }}
-    </li>
-</ul>
+<div class="container">
+    <div class="center">
+        <h1>Webbutveckling - Ramschema</h1>
+        <form>
+            <label for="srchInput"><strong>Sök:</strong></label><br>
+            <input type="search" id="srchInput" placeholder="Sök efter kurskod eller kursnamn">
+        </form>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <td id="courseCode">Kurskod</td>
+                <td id="courseName">Kursnamn</td>
+                <td id="courseProg">Progression</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let course of courses">
+            <td>{{ course.code}}</td>
+            <td><a href="{{course.syllabus}}" target="_blank">{{ course.coursename }}</a></td>
+            <td>{{ course.progression}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

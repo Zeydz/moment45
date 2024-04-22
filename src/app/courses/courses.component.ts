@@ -11,10 +11,10 @@ import { HttpClientService } from '../services/http-client.service';
 })
 export class CoursesComponent {
   courses: any[] = [];
-  constructor(private HttpClient: HttpClientService) {}
+  constructor(private httpClient: HttpClientService) {}
 
     ngOnInit() {
-      this.HttpClient.getCourses().subscribe((data) => {
+      this.httpClient.getCourses().subscribe((data) => {
         this.courses = data;
       });
     }
