@@ -8,7 +8,6 @@ table {
     width: 80%;
 }
 
-
 /* Container med bredd osv */
 .container {
     margin: 50px auto;
@@ -50,6 +49,13 @@ input[type=text] {
 
 thead tr td{
     cursor:pointer;
+}
+
+a {
+    color: black;
+}
+a:hover {
+    color: rgb(97, 97, 97);
 }
 
 /* Responsivitet */
