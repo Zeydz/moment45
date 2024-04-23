@@ -2,27 +2,35 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { HttpClientService } from '../services/http-client.service';
 import { Course } from '../models/course';
+import { FormsModule} from '@angular/forms';
 
 @Component({
   selector: 'app-courses',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, FormsModule],
   templateUrl: './courses.component.html',
   styleUrl: './courses.component.css'
 })
 export class CoursesComponent implements OnInit {
+
+  /* Variabler */
   courses: Course[] = [];
+  filteredCourses: Course[] = [];
+  searchWord: string = '';
   sortBy: string = '';
   sortDirection: string = 'asc';
 
   constructor(private httpClient: HttpClientService) {}
 
+  /* Körs direkt */
   ngOnInit() {
     this.httpClient.getCourses().subscribe((data: Course[]) => {
       this.courses = data;
+      this.filteredCourses = data;
     });
   }
 
+  /* Sorterings funktion */
   sortCourses(column: string) {
     /* Kontrollerar vilket håll det sorteras */
     if (this.sortBy === column) {
@@ -44,5 +52,18 @@ export class CoursesComponent implements OnInit {
         return 0;
       }
     });
+  }
+  
+  /* Funktion för att sortera efter sökning */
+  filterCourses() {
+    const searchWord = this.searchWord.trim().toLowerCase();
+    if (!searchWord) {
+      this.filteredCourses = this.courses;
+    } else {
+      this.filteredCourses = this.courses.filter(course =>
+        course.code.toLowerCase().includes(searchWord) ||
+        course.coursename.toLowerCase().includes(searchWord)
+      );
+    }
   }
 }

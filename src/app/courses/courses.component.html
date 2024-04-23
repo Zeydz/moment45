@@ -3,7 +3,7 @@
         <h1>Webbutveckling - Ramschema</h1>
         <form>
             <label for="srchInput"><strong>Sök:</strong></label><br>
-            <input type="text" id="srchInput" placeholder="Sök efter kurskod eller kursnamn">
+            <input type="text" id="srchInput" name="searchWord" placeholder="Sök efter kurskod eller kursnamn" [(ngModel)]="searchWord" (ngModelChange)="filterCourses()">
         </form>
     </div>
     <table>
@@ -15,7 +15,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let course of courses">
+            <tr *ngFor="let course of filteredCourses">
             <td>{{ course.code}}</td>
             <td><a href="{{course.syllabus}}" target="_blank">{{ course.coursename }}</a></td>
             <td>{{ course.progression}}</td>
