@@ -1,3 +1,18 @@
+# Webbutveckling Ramschema
+
+## Beskrivning
+Detta är en Angular-applikation för att visa ett ramschema för webbutvecklingskurser. Användare kan söka efter kurser, sortera dem och visa detaljer för varje kurs.
+
+## Användning
+- På startsidan visas en lista över tillgängliga kurser.
+- Använd sökfältet för att filtrera kurser efter kurskod eller kursnamn.
+- Klicka på kolumnrubrikerna för att sortera kurserna efter den valda kolumnen.
+- Klicka på kursnamnet för att visa mer detaljerad information om en kurs, inklusive en länk till kursplanen.
+
+[Webbplats](https://radiant-kashata-369c56.netlify.app/courses)
+
+
+
 # Moment4
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.5.
